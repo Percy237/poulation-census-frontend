@@ -1,5 +1,12 @@
+# render.yaml
+
 services:
   - name: web
     type: web
     buildCommand: npm run build
     startCommand: npm start
+    envVars:
+      NODE_ENV: production
+    routes:
+      - path: /*
+        command: npm start
