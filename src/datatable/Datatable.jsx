@@ -68,7 +68,9 @@ const Datatable = () => {
     setLoading(true);
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5555/user");
+        const response = await axios.get(
+          "https://population-census-backend.onrender.com/user"
+        );
         console.log(response.data.data);
         setUsers(response.data.data);
         setLoading(false);
