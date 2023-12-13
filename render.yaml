@@ -8,5 +8,5 @@ services:
     envVars:
       NODE_ENV: production
     routes:
-      - path: "/"
+      - path: "/*"
         command: npm start
