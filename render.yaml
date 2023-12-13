@@ -8,5 +8,4 @@ services:
     envVars:
       NODE_ENV: production
     routes:
-      - path: "/*"
-        command: npm start
+      - path: "/https://population-census-backend.onrender.com*"

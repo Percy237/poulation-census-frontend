@@ -8,7 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/https://population-census-backend.onrender.com"
+          element={<Home />}
+        />
         <Route path="/registration" element={<RegistrationForm />} />
         <Route path="/registered-users" element={<Datatable />} />
         <Route path="/statistics" element={<Chart />} />
