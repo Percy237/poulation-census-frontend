@@ -10,6 +10,7 @@ import {
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Typography } from "@mui/material";
 
 const Chart = () => {
   const [users, setUsers] = useState([]);
@@ -17,13 +18,9 @@ const Chart = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(
-          "https://population-census-backend.onrender.com/user"
-        );
+        const response = await axios.get("http://localhost:5555/user");
         console.log(response.data.data);
         setUsers(response.data.data);
-
-        console.log(users);
       } catch (error) {
         console.error("Error fetching Books:", error);
       }
@@ -74,8 +71,10 @@ const Chart = () => {
 
   return (
     <div className="bg-white shadow-md rounded-md p-[10px]">
-      <div className="mb-[20px] text-slate-500 font-semibold">Summary</div>
-      <ResponsiveContainer width="100%" aspect={3 / 1}>
+      <Typography variant="h5" mb={3}>
+        Summary
+      </Typography>
+      <ResponsiveContainer width="100%" aspect={4 / 1}>
         <AreaChart
           width={730}
           height={150}

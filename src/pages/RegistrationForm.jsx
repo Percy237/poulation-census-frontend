@@ -9,6 +9,7 @@ const RegistrationForm = () => {
     control,
     register,
     setValue,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -33,7 +34,7 @@ const RegistrationForm = () => {
 
     if (age >= 21) {
       axios
-        .post("https://population-census-backend.onrender.com/user", { ...data, age })
+        .post("http://localhost:5555/user", { ...data, age })
         .then(() => {
           toast.success("Registration successful", {
             position: "top-right",
@@ -45,6 +46,7 @@ const RegistrationForm = () => {
             progress: undefined,
             theme: "light",
           });
+          reset();
         })
         .catch((error) => {
           console.log(error);
